@@ -1,0 +1,16 @@
+{
+  "name": "qwik",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && vite build --ssr src/entry.preview.tsx",
+    "start": "vite preview --port 3105 --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.20.3",
+    "@builder.io/qwik-city": "1.20.3",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vite-tsconfig-paths": "6.1.1"
+  }
+}

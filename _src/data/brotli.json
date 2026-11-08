@@ -1,0 +1,59 @@
+{
+  "checked_on": "2026-11-08",
+  "method": "sum over every .js/.mjs file in the build directory of gzip level 9 and brotli quality 11",
+  "results": {
+    "vanilla": {
+      "gzip9": 465,
+      "brotli11": 386
+    },
+    "solid": {
+      "gzip9": 4329,
+      "brotli11": 3930
+    },
+    "preact": {
+      "gzip9": 5851,
+      "brotli11": 5345
+    },
+    "lit": {
+      "gzip9": 5942,
+      "brotli11": 5373
+    },
+    "svelte": {
+      "gzip9": 10053,
+      "brotli11": 9141
+    },
+    "vue": {
+      "gzip9": 24579,
+      "brotli11": 22392
+    },
+    "angular": {
+      "gzip9": 32639,
+      "brotli11": 29518
+    },
+    "react": {
+      "gzip9": 67748,
+      "brotli11": 58412
+    }
+  },
+  "order_gzip": [
+    "vanilla",
+    "solid",
+    "preact",
+    "lit",
+    "svelte",
+    "vue",
+    "angular",
+    "react"
+  ],
+  "order_brotli": [
+    "vanilla",
+    "solid",
+    "preact",
+    "lit",
+    "svelte",
+    "vue",
+    "angular",
+    "react"
+  ],
+  "order_same": true
+}

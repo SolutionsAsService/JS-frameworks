@@ -1,0 +1,246 @@
+{
+  "results": {
+    "react": {
+      "js_load_bytes": 67748,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 189,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-kLAPbAqO.js 67748"
+      ],
+      "status": "ok",
+      "version": "19.3.1",
+      "vite_version": "8.3.6"
+    },
+    "preact": {
+      "js_load_bytes": 5851,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 188,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-DnQApJKi.js 5851"
+      ],
+      "status": "ok",
+      "version": "11.2.0",
+      "vite_version": "8.3.6"
+    },
+    "vue": {
+      "js_load_bytes": 24579,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 186,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-zr73LYnc.js 24579"
+      ],
+      "status": "ok",
+      "version": "3.5.45",
+      "vite_version": "8.3.6"
+    },
+    "svelte": {
+      "js_load_bytes": 10053,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 187,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-pD0UBoL8.js 10053"
+      ],
+      "status": "ok",
+      "version": "5.57.3",
+      "vite_version": "8.3.6"
+    },
+    "solid": {
+      "js_load_bytes": 4329,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 187,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-C1XJ_2Jy.js 4329"
+      ],
+      "status": "ok",
+      "version": "1.9.18",
+      "vite_version": "8.3.6"
+    },
+    "lit": {
+      "js_load_bytes": 5942,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 185,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-C2fanWGB.js 5942"
+      ],
+      "status": "ok",
+      "version": "3.3.3",
+      "vite_version": "8.3.6"
+    },
+    "angular": {
+      "js_load_bytes": 32639,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 268,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/main-WVA7YYRJ.js 32639"
+      ],
+      "status": "ok",
+      "version": "22.2.5",
+      "vite_version": "8.3.5"
+    },
+    "htmx": {
+      "js_load_bytes": 16882,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 211,
+      "ssr": true,
+      "inline_js_gz": 0,
+      "files": [
+        "/htmx.min.js 16882"
+      ],
+      "status": "ok",
+      "version": "2.0.11"
+    },
+    "nextjs": {
+      "js_load_bytes": 134829,
+      "js_files": 6,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 1673,
+      "ssr": true,
+      "inline_js_gz": 1491,
+      "files": [
+        "/_next/static/chunks/0j1we3cwg31qe.js 5951",
+        "/_next/static/chunks/0w39z1iplz3y1.js 249",
+        "/_next/static/chunks/turbopack-2u1d16houkiyo.js 3905",
+        "/_next/static/chunks/3qfy96eoyh-ek.js 3513",
+        "/_next/static/chunks/0m3mby5pxg4oz.js 49625",
+        "/_next/static/chunks/23e6jep2anmtk.js 71586"
+      ],
+      "status": "ok",
+      "version": "16.4.5"
+    },
+    "nuxt": {
+      "js_load_bytes": 70925,
+      "js_files": 4,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 634,
+      "ssr": true,
+      "inline_js_gz": 150,
+      "files": [
+        "/_nuxt/BI7KaP-T.js 211",
+        "/_nuxt/DJv0Ne-q.js 67856",
+        "/_nuxt/DWrgjl2F.js 1696",
+        "/_nuxt/CWNR9mXu.js 1162"
+      ],
+      "status": "ok",
+      "version": "4.6.4",
+      "vite_version": "8.3.6"
+    },
+    "astro-island": {
+      "js_load_bytes": 7614,
+      "js_files": 4,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 2268,
+      "ssr": true,
+      "inline_js_gz": 2049,
+      "files": [
+        "/_astro/Counter.Bxyffe7s.js 377",
+        "/_astro/client.Zhk-N1eU.js 1536",
+        "/_astro/hooks.BBRV89oA.js 1103",
+        "/_astro/preact.Cqu7G1k0.js 4598"
+      ],
+      "status": "ok",
+      "version": "7.4.7",
+      "preact_version": "11.2.0",
+      "vite_version": "8.3.6"
+    },
+    "astro-script": {
+      "js_load_bytes": 119,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 201,
+      "ssr": true,
+      "inline_js_gz": 0,
+      "files": [
+        "/_astro/index.astro_astro_type_script_index_0_lang.BWRKO-ME.js 119"
+      ],
+      "status": "ok",
+      "version": "7.4.7",
+      "vite_version": "8.3.6"
+    },
+    "qwik": {
+      "js_load_bytes": 25299,
+      "js_files": 5,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 1080,
+      "ssr": true,
+      "inline_js_gz": 382,
+      "files": [
+        "/build/q-BKZ00VYc.js 2002",
+        "/build/q-naDMFAHy.js 1678",
+        "/build/q-DGixNSXh.js 20149",
+        "/build/q-D8jmAbjj.js 384",
+        "/build/q-BoUwlUgV.js 1086"
+      ],
+      "status": "ok",
+      "version": "1.20.3",
+      "vite_version": "7.3.7"
+    },
+    "qwik-nopreload": {
+      "js_load_bytes": 21827,
+      "js_files": 2,
+      "js_after_click_bytes": 2386,
+      "js_after_click_files": 2,
+      "html_gz": 865,
+      "ssr": true,
+      "inline_js_gz": 73,
+      "files": [
+        "/build/q-naDMFAHy.js 1678",
+        "/build/q-DGixNSXh.js 20149"
+      ],
+      "status": "ok",
+      "version": "1.20.3",
+      "vite_version": "7.3.7"
+    },
+    "vanilla": {
+      "js_load_bytes": 465,
+      "js_files": 1,
+      "js_after_click_bytes": 0,
+      "js_after_click_files": 0,
+      "html_gz": 184,
+      "ssr": false,
+      "inline_js_gz": 0,
+      "files": [
+        "/assets/index-C2C0rQxg.js 465"
+      ],
+      "status": "ok",
+      "version": "8.3.6"
+    }
+  },
+  "procedure": "Production build of an identical heading+counter-button app per framework; served via static server (or the framework's own prod server for SSR/htmx); fresh headless Chromium context; wait networkidle; every JavaScript response (content-type or .js/.mjs) sized as zlib gzip level 9 of its body, summed = js_load_bytes; click button once, extra JS requested = js_after_click_bytes; click verified count: 0 -> count: 1; html_gz = gzip-9 of initial document; ssr = plain fetch contains \"count: 0\". Inline <script> blocks are not in js_load_bytes (see inline_js_gz). See tools/measure-sizes.mjs.",
+  "measured_on": "2026-11-08",
+  "node": "v22.23.4"
+}

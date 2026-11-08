@@ -1,0 +1,123 @@
+{
+    "procedure": "GitHub code search scoped to user:SolutionsAsService; ignores node_modules, .next and lockfiles; not exhaustive",
+    "scanned_on": "2026-11-08",
+    "queries": {
+        "react": {
+            "query": "user:SolutionsAsService filename:package.json \"react\"",
+            "repos": [
+                "GlobalArms",
+                "Internet_Structure",
+                "PasswordGen",
+                "PrometheusProtocol",
+                "boilerplate-site",
+                "documentation-starter-kit",
+                "fly-general",
+                "foidbot",
+                "open-dungeon",
+                "operatorOS",
+                "purple-sec-site",
+                "stark-platform",
+                "vfx-machine"
+            ]
+        },
+        "nextjs": {
+            "query": "user:SolutionsAsService filename:package.json \"next\"",
+            "repos": [
+                "GlobalArms",
+                "Internet_Structure",
+                "PasswordGen",
+                "PrometheusProtocol",
+                "boilerplate-site",
+                "documentation-starter-kit",
+                "foidbot",
+                "purple-sec-site",
+                "vfx-machine"
+            ]
+        },
+        "lit": {
+            "query": "user:SolutionsAsService filename:package.json \"lit\"",
+            "repos": [
+                "military-display",
+                "miniature-viewer",
+                "open-dungeon"
+            ]
+        },
+        "preact": {
+            "query": "user:SolutionsAsService filename:package.json \"preact\"",
+            "repos": []
+        },
+        "vue": {
+            "query": "user:SolutionsAsService filename:package.json \"vue\"",
+            "repos": []
+        },
+        "angular": {
+            "query": "user:SolutionsAsService filename:package.json \"@angular/core\"",
+            "repos": []
+        },
+        "svelte": {
+            "query": "user:SolutionsAsService filename:package.json \"svelte\"",
+            "repos": []
+        },
+        "solid": {
+            "query": "user:SolutionsAsService filename:package.json \"solid-js\"",
+            "repos": []
+        },
+        "astro": {
+            "query": "user:SolutionsAsService filename:package.json \"astro\"",
+            "repos": []
+        },
+        "nuxt": {
+            "query": "user:SolutionsAsService filename:package.json \"nuxt\"",
+            "repos": []
+        },
+        "qwik": {
+            "query": "user:SolutionsAsService filename:package.json \"@builder.io/qwik\"",
+            "repos": []
+        },
+        "htmx": {
+            "query": "user:SolutionsAsService htmx.org",
+            "repos": []
+        },
+        "vite": {
+            "query": "user:SolutionsAsService filename:package.json \"vite\"",
+            "repos": [
+                "JARVIS",
+                "fly-general",
+                "globalism-calc",
+                "open-dungeon",
+                "operatorOS",
+                "stark-platform"
+            ]
+        },
+        "three": {
+            "query": "user:SolutionsAsService filename:package.json \"three\"",
+            "repos": [
+                "military-display",
+                "miniature-viewer",
+                "open-dungeon",
+                "stark-platform"
+            ]
+        },
+        "d3": {
+            "query": "user:SolutionsAsService filename:package.json \"d3\"",
+            "repos": [
+                "Internet_Structure",
+                "PrometheusProtocol",
+                "developer-map",
+                "fly-general",
+                "globalism-calc",
+                "operatorOS",
+                "physics-map"
+            ]
+        },
+        "tailwind": {
+            "query": "user:SolutionsAsService filename:package.json \"tailwindcss\"",
+            "repos": [
+                "boilerplate-site",
+                "foidbot",
+                "open-dungeon",
+                "vfx-machine"
+            ]
+        }
+    }
+}

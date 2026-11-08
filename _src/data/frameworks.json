@@ -1,0 +1,909 @@
+{
+  "react": {
+    "name": "React",
+    "kind": "UI library",
+    "by": "Jordan Walke, at Facebook",
+    "since": "2013",
+    "lang": "JavaScript with JSX (TypeScript is common)",
+    "tagline": "Describe the screen as functions of state, and let React work out the changes.",
+    "claim": "Components are functions",
+    "touches": "Next.js, Preact",
+    "builds_on": [],
+    "rendering": "client, or server with a framework",
+    "updates": "virtual DOM diff",
+    "authoring": "JSX",
+    "router": "no (use a framework or library)",
+    "pipeline": [
+      "Write components in JSX",
+      "A build step turns JSX into function calls",
+      "react and react-dom ship to the browser",
+      "State changes re-run components; React diffs and patches the DOM"
+    ],
+    "what": [
+      "React describes a screen as a tree of components. A component is a function that takes props and returns what that part of the screen should look like, written in JSX, which looks like HTML inside JavaScript. State lives in hooks such as <code>useState</code>.",
+      "React is a library, not a full framework: it draws the UI and leaves routing, data loading and the build to you or to a framework built on it, of which Next.js is the biggest."
+    ],
+    "how": [
+      "When state changes, React calls the component again and gets a new description of the UI. It compares that tree with the previous one (the <i>virtual DOM</i>, reconciled by an algorithm called Fiber) and changes only the real DOM nodes that differ.",
+      "Rendering can be paused, resumed and prioritised, which is what <i>concurrent rendering</i> means. Hooks keep state per component instance, so the order of hook calls must not change between renders.",
+      "<i>Server Components</i> are components that run only on the server and send their output to the client, so their code never ships to the browser. They need a framework or bundler that supports them."
+    ],
+    "good": [
+      "The largest ecosystem and hiring pool of the frameworks here",
+      "One model for the web and, with React Native, for mobile",
+      "Very flexible: you pick the router, data layer and build"
+    ],
+    "costs": [
+      "The runtime ships to every visitor (see the measured figure)",
+      "You assemble the rest of the stack yourself, or adopt a framework that has",
+      "Re-running components on every change means unnecessary re-renders are the developer’s to find and prevent"
+    ],
+    "overlap": [
+      [
+        "preact",
+        "Preact implements the same API in a much smaller package, and <code>preact/compat</code> lets many React libraries run on it."
+      ],
+      [
+        "nextjs",
+        "Next.js is a framework built on React, and supplies the routing, server rendering and bundling React leaves out."
+      ],
+      [
+        "solid",
+        "Solid uses JSX too, so code looks alike, but it does not re-run components."
+      ]
+    ],
+    "differs": [
+      [
+        "svelte",
+        "Svelte moves the work to build time: a compiler writes the DOM updates, with no diffing at run time."
+      ],
+      [
+        "vue",
+        "Vue tracks which state each component reads and re-renders only that component, so developers rarely write memoization by hand."
+      ]
+    ],
+    "sources": [
+      [
+        "React documentation",
+        "https://react.dev/"
+      ],
+      [
+        "Wikipedia: React",
+        "https://en.wikipedia.org/wiki/React_(software)"
+      ]
+    ],
+    "group": "library",
+    "accent": "#06b6d4",
+    "pros": "Large community, reusable components, robust ecosystem.",
+    "cons": "Requires JSX and build tooling, steeper learning curve.",
+    "pros_from_earlier": true
+  },
+  "preact": {
+    "name": "Preact",
+    "kind": "UI library",
+    "by": "Jason Miller",
+    "since": "2015",
+    "lang": "JavaScript or TypeScript, with JSX",
+    "tagline": "React’s API in a small package.",
+    "claim": "React, much smaller",
+    "touches": "React, Astro",
+    "builds_on": [
+      "react"
+    ],
+    "rendering": "client, or server",
+    "updates": "virtual DOM diff",
+    "authoring": "JSX",
+    "router": "separate package",
+    "pipeline": [
+      "Write components in JSX",
+      "A build step turns JSX into function calls",
+      "preact ships to the browser",
+      "State changes re-run components; Preact diffs and patches the DOM"
+    ],
+    "what": [
+      "Preact is a lightweight alternative to React that keeps the same component and hooks API. It is made to be small, and its compatibility layer, <code>preact/compat</code>, lets many React libraries run on it.",
+      "It also offers <i>signals</i> in a separate package, which are reactive values that update the parts of the UI that read them without re-running whole components."
+    ],
+    "how": [
+      "Preact’s diffing works on the same idea as React’s virtual DOM. It leaves out features such as React’s concurrent scheduling and synthetic event system, which is where the saving in size comes from.",
+      "Many tools, Astro among them, accept Preact as a drop-in for React in places where the bundle size matters."
+    ],
+    "good": [
+      "React’s model at a fraction of the download (see the measured figure)",
+      "Most React libraries work through the compatibility layer",
+      "Fast to start"
+    ],
+    "costs": [
+      "Not every React feature or library behaves identically",
+      "Smaller team and ecosystem than React",
+      "Newest React features reach it later, or not at all"
+    ],
+    "overlap": [
+      [
+        "react",
+        "Same API, same JSX, same hooks."
+      ],
+      [
+        "astro",
+        "A common choice for Astro islands."
+      ]
+    ],
+    "differs": [
+      [
+        "solid",
+        "Preact still re-runs components and diffs; Solid does not."
+      ],
+      [
+        "react",
+        "Smaller, with fewer built-in features."
+      ]
+    ],
+    "sources": [
+      [
+        "Preact documentation",
+        "https://preactjs.com/"
+      ],
+      [
+        "Wikipedia: Preact",
+        "https://en.wikipedia.org/wiki/Preact_(software)"
+      ]
+    ],
+    "group": "library",
+    "accent": "#7c3aed",
+    "pros": "React’s model at a fraction of the download (see the measured figure). Most React libraries work through the compatibility layer.",
+    "cons": "Not every React feature or library behaves identically. Smaller team and ecosystem than React.",
+    "pros_from_earlier": false
+  },
+  "solid": {
+    "name": "Solid",
+    "kind": "UI library",
+    "by": "Ryan Carniato",
+    "since": "2021 (1.0)",
+    "lang": "JavaScript or TypeScript, with JSX",
+    "tagline": "React’s look with no re-rendering: signals update only what read them.",
+    "claim": "Updates only what reads it",
+    "touches": "React, signals",
+    "builds_on": [],
+    "rendering": "client, or server with SolidStart",
+    "updates": "fine-grained signals",
+    "authoring": "JSX",
+    "router": "separate package (and SolidStart)",
+    "pipeline": [
+      "Write components in JSX",
+      "The compiler turns JSX into direct DOM creation and signal subscriptions",
+      "A small reactive runtime ships",
+      "A signal change updates the exact DOM node that read it"
+    ],
+    "what": [
+      "Solid looks like React: components are functions and the markup is JSX. The difference is that a component function runs once. The state it creates, with <code>createSignal</code>, is a reactive value, and the places in the JSX that read it become subscriptions.",
+      "SolidStart is the application framework for routing and server rendering."
+    ],
+    "how": [
+      "The JSX compiler turns each expression in the markup into an effect that reads signals. When a signal changes, only those effects run and the matching DOM nodes are updated; no component function is called again and no tree is compared.",
+      "This is why reading a signal in Solid means calling it, <code>count()</code>, and why destructuring props can lose reactivity."
+    ],
+    "good": [
+      "Updates are targeted by construction",
+      "React-like syntax eases the move for React developers",
+      "Small runtime"
+    ],
+    "costs": [
+      "A far smaller ecosystem than React’s",
+      "Habits from React (destructuring props, conditionals in JSX) can silently break reactivity",
+      "A younger framework ecosystem and tooling"
+    ],
+    "overlap": [
+      [
+        "react",
+        "The same JSX authoring."
+      ],
+      [
+        "svelte",
+        "Both update the DOM without a virtual DOM."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "In React the component function re-runs on change; in Solid it runs once."
+      ],
+      [
+        "vue",
+        "Vue tracks reads per component render; Solid tracks per expression."
+      ]
+    ],
+    "sources": [
+      [
+        "Solid documentation",
+        "https://docs.solidjs.com/"
+      ],
+      [
+        "Wikipedia: SolidJS",
+        "https://en.wikipedia.org/wiki/SolidJS"
+      ]
+    ],
+    "group": "library",
+    "accent": "#3b82f6",
+    "pros": "Updates are targeted by construction. React-like syntax eases the move for React developers.",
+    "cons": "A far smaller ecosystem than React’s. Habits from React (destructuring props, conditionals in JSX) can silently break reactivity.",
+    "pros_from_earlier": false
+  },
+  "lit": {
+    "name": "Lit",
+    "kind": "web components library",
+    "by": "Google",
+    "since": "2021 (Lit 2, after LitElement)",
+    "lang": "JavaScript or TypeScript",
+    "tagline": "A small layer over the browser’s own component standard.",
+    "claim": "Built on browser components",
+    "touches": "Astro, React",
+    "builds_on": [],
+    "rendering": "client",
+    "updates": "template re-evaluation, only changed parts",
+    "authoring": "tagged template literals in classes",
+    "router": "no",
+    "pipeline": [
+      "Write a class that extends <code>LitElement</code>",
+      "Register it as a custom element",
+      "A small library ships",
+      "A property change re-evaluates the template and updates only the changed parts"
+    ],
+    "what": [
+      "Lit builds components out of the browser’s own Web Components standards: custom elements, shadow DOM and templates. A Lit component is a class registered as an HTML tag, so it works in any page and inside any other framework.",
+      "It is the successor to the Polymer project at Google."
+    ],
+    "how": [
+      "The template is a JavaScript tagged template literal, <code>html`...`</code>. The first render creates the DOM; after that, when a reactive property changes, Lit re-evaluates the template and updates only the parts of the DOM that hold changed values, with no virtual DOM tree.",
+      "Because the result is a real custom element, there is no framework boundary to cross: a Lit element can be used from React, Vue, Angular or plain HTML."
+    ],
+    "good": [
+      "Components that work everywhere",
+      "Very small library on top of platform features",
+      "Styles are scoped by the browser, with shadow DOM"
+    ],
+    "costs": [
+      "No router, store or full-stack story of its own",
+      "Shadow DOM makes global styling and some form handling harder",
+      "Server rendering is less mature than the meta-frameworks’"
+    ],
+    "overlap": [
+      [
+        "astro",
+        "Astro can host Lit components as islands."
+      ],
+      [
+        "react",
+        "A Lit element can be used inside React."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "Lit components are browser elements, React components are not."
+      ],
+      [
+        "svelte",
+        "Svelte compiles components away; Lit keeps a small runtime and uses the platform."
+      ]
+    ],
+    "sources": [
+      [
+        "Lit documentation",
+        "https://lit.dev/"
+      ],
+      [
+        "Wikipedia: Lit",
+        "https://en.wikipedia.org/wiki/Lit_(web_framework)"
+      ]
+    ],
+    "group": "library",
+    "accent": "#f59e0b",
+    "pros": "Components that work everywhere. Very small library on top of platform features.",
+    "cons": "No router, store or full-stack story of its own. Shadow DOM makes global styling and some form handling harder.",
+    "pros_from_earlier": false
+  },
+  "vue": {
+    "name": "Vue",
+    "kind": "UI framework",
+    "by": "Evan You",
+    "since": "2014 (announced)",
+    "lang": "JavaScript or TypeScript, with single-file components",
+    "tagline": "Templates and reactive state that you can adopt a piece at a time.",
+    "claim": "Templates, tracked for you",
+    "touches": "Nuxt, Vite",
+    "builds_on": [],
+    "rendering": "client, or server with Nuxt",
+    "updates": "reactive tracking, virtual DOM underneath",
+    "authoring": "single-file component templates",
+    "router": "official add-on (Vue Router)",
+    "pipeline": [
+      "Write a <code>.vue</code> file: template, script and style together",
+      "The compiler turns the template into optimised render functions",
+      "vue ships to the browser",
+      "A change to reactive state re-renders only the components that read it"
+    ],
+    "what": [
+      "Vue is a framework for building interfaces from components. Each component is usually one <code>.vue</code> file with a <code>&lt;template&gt;</code> written in HTML-like syntax, a <code>&lt;script&gt;</code> and optionally a <code>&lt;style&gt;</code>. It is described as <i>progressive</i>: it can be added to one page with a script tag, or used as a full build-tooled app.",
+      "The official router (Vue Router) and state store (Pinia) are separate packages that the project maintains alongside the core."
+    ],
+    "how": [
+      "Vue 3 wraps state in reactive proxies. While a component renders, Vue records which reactive values it reads; when one of those changes, only the components that read it are scheduled to render again. The developer rarely writes memoization.",
+      "Templates are compiled ahead of time. The compiler marks which parts of a template are static and which can change, so the update step skips the static parts. Under the hood there is still a virtual DOM; Vapor Mode is an in-development compile mode that drops it."
+    ],
+    "good": [
+      "Gentle to adopt: HTML-like templates, one file per component",
+      "Fine-grained updates without hand-written optimisation",
+      "Official router, store and build tool (Vite, also made by Evan You) that fit together"
+    ],
+    "costs": [
+      "Two ways to write components (Options API and Composition API) coexist",
+      "A smaller job market and library catalogue than React",
+      "Templates are a separate language from JavaScript, which is a gain for some teams and a loss for others"
+    ],
+    "overlap": [
+      [
+        "svelte",
+        "Both use single-file components with an HTML-like template, compiled ahead of time."
+      ],
+      [
+        "nuxt",
+        "Nuxt is the full-stack framework on top of Vue."
+      ],
+      [
+        "angular",
+        "Both use HTML templates with directives for loops and conditions."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "React’s model is re-run the function and diff; Vue’s is track what was read and update just that."
+      ],
+      [
+        "solid",
+        "Solid tracks reads too, but at the level of single expressions, with no component re-render and no virtual DOM."
+      ]
+    ],
+    "sources": [
+      [
+        "Vue documentation",
+        "https://vuejs.org/"
+      ],
+      [
+        "Wikipedia: Vue.js",
+        "https://en.wikipedia.org/wiki/Vue.js"
+      ]
+    ],
+    "group": "framework",
+    "accent": "#22c55e",
+    "pros": "Easy to learn, flexible, and highly approachable.",
+    "cons": "Smaller ecosystem compared to React, less corporate backing.",
+    "pros_from_earlier": true
+  },
+  "angular": {
+    "name": "Angular",
+    "kind": "application framework",
+    "by": "Google",
+    "since": "2016 (Angular 2; AngularJS, 2010)",
+    "lang": "TypeScript",
+    "tagline": "A complete, opinionated platform: components, router, forms, HTTP and dependency injection.",
+    "claim": "The whole platform in one box",
+    "touches": "TypeScript, RxJS",
+    "builds_on": [],
+    "rendering": "client, or server with built-in SSR",
+    "updates": "signals and change detection",
+    "authoring": "TypeScript classes with HTML templates",
+    "router": "yes, built in",
+    "pipeline": [
+      "Write components as TypeScript classes with templates",
+      "The Angular compiler turns templates into code ahead of time",
+      "A bundle with the runtime ships to the browser",
+      "Signals and change detection update the DOM"
+    ],
+    "what": [
+      "Angular is a framework that comes with almost everything an application needs: a component model, a router, form handling, an HTTP client, testing tools and a command-line tool. It is written in TypeScript and requires it.",
+      "Angular 2 (2016) was a rewrite of AngularJS, the earlier framework from 2010 which shares its name and is a different thing. Its creators include Miško Hevery, who later made Qwik."
+    ],
+    "how": [
+      "Components are classes with a decorator that names an HTML template. Services are classes provided through <i>dependency injection</i>: a component asks for what it needs and the framework supplies it.",
+      "Angular compiles templates ahead of time. Updating the screen has historically relied on <i>zone.js</i>, which notices asynchronous events and triggers change detection over the component tree. <i>Signals</i> are a newer reactive primitive that tell Angular exactly which bindings changed, and the framework is moving toward updates driven by signals instead of zones."
+    ],
+    "good": [
+      "Everything is included and designed to fit together",
+      "Strong conventions help large teams keep code alike",
+      "Typed from templates to services"
+    ],
+    "costs": [
+      "The most concepts to learn first: modules or standalone components, injection, decorators, RxJS",
+      "Starts larger than the small libraries, because the platform comes with it (see the measured figure)",
+      "Opinionated: leaving its conventions is harder than in a library"
+    ],
+    "overlap": [
+      [
+        "vue",
+        "HTML templates with directives for conditions and loops."
+      ],
+      [
+        "qwik",
+        "Created by the same person (Miško Hevery), with the opposite answer on how much work to do at start-up."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "React is one library of UI parts; Angular is a platform that decides the router, forms and HTTP client for you."
+      ],
+      [
+        "svelte",
+        "Svelte ships little runtime; Angular ships a framework."
+      ]
+    ],
+    "sources": [
+      [
+        "Angular documentation",
+        "https://angular.dev/"
+      ],
+      [
+        "Wikipedia: Angular",
+        "https://en.wikipedia.org/wiki/Angular_(web_framework)"
+      ]
+    ],
+    "group": "framework",
+    "accent": "#ef4444",
+    "pros": "Comprehensive framework, built-in TypeScript support, two-way data binding.",
+    "cons": "Verbose syntax, steep learning curve, heavy structure.",
+    "pros_from_earlier": true
+  },
+  "svelte": {
+    "name": "Svelte",
+    "kind": "compiler and UI framework",
+    "by": "Rich Harris",
+    "since": "2016",
+    "lang": "JavaScript or TypeScript, in .svelte files",
+    "tagline": "A compiler that turns components into direct DOM updates.",
+    "claim": "Does its work at build time",
+    "touches": "SvelteKit, Vite",
+    "builds_on": [],
+    "rendering": "client, or server with SvelteKit",
+    "updates": "compiled fine-grained updates",
+    "authoring": "single-file component templates",
+    "router": "SvelteKit",
+    "pipeline": [
+      "Write a <code>.svelte</code> file",
+      "The compiler turns it into JavaScript that updates the DOM directly",
+      "Only that output and a small runtime ship",
+      "A change runs just the code for what depended on it"
+    ],
+    "what": [
+      "Svelte is a compiler. A <code>.svelte</code> file holds markup, script and style, and the build turns it into plain JavaScript that creates and updates the DOM, so less of a framework has to be sent to the browser.",
+      "SvelteKit is the application framework around it: file-based routes, server rendering, form handling and adapters for deploying to different hosts."
+    ],
+    "how": [
+      "Svelte 5 introduced <i>runes</i>, such as <code>$state</code> and <code>$derived</code>, to mark reactive values. The compiler sees where each is used and writes code that updates only those places when they change; there is no virtual DOM to diff.",
+      "Because the work is decided at build time, a small component can compile to very little code. The cost is that the compiler is part of the toolchain, and a component’s reactivity is understood by reading the compiler’s rules."
+    ],
+    "good": [
+      "Small output for small apps (see the measured figure)",
+      "Little boilerplate: state is a variable",
+      "SvelteKit supplies routing and rendering modes"
+    ],
+    "costs": [
+      "A smaller ecosystem and fewer jobs than React or Angular",
+      "A compiler step and its own syntax, which tools must support",
+      "The runes model replaced the earlier reactive syntax, so older tutorials differ"
+    ],
+    "overlap": [
+      [
+        "vue",
+        "Single-file components with HTML-like templates."
+      ],
+      [
+        "solid",
+        "Both do fine-grained updates with no virtual DOM, Solid at run time through signals and Svelte mostly at compile time."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "React sends a runtime that diffs; Svelte sends compiled updates."
+      ],
+      [
+        "angular",
+        "Angular ships the platform; Svelte ships the component."
+      ]
+    ],
+    "sources": [
+      [
+        "Svelte documentation",
+        "https://svelte.dev/docs"
+      ],
+      [
+        "Wikipedia: Svelte",
+        "https://en.wikipedia.org/wiki/Svelte"
+      ]
+    ],
+    "group": "framework",
+    "accent": "#f97316",
+    "pros": "Compiles to efficient vanilla JavaScript, minimal runtime overhead, simple syntax.",
+    "cons": "Smaller community, less mature tooling and ecosystem.",
+    "pros_from_earlier": true
+  },
+  "qwik": {
+    "name": "Qwik",
+    "kind": "resumable framework",
+    "by": "Miško Hevery, at Builder.io",
+    "since": "2023 (1.0)",
+    "lang": "TypeScript or JavaScript, with JSX",
+    "tagline": "Do not run the app again in the browser: resume where the server stopped.",
+    "claim": "Picks up where the server stopped",
+    "touches": "Angular, Vite",
+    "builds_on": [],
+    "rendering": "server first, then resumed",
+    "updates": "signals, loaded on demand",
+    "authoring": "JSX",
+    "router": "Qwik City",
+    "pipeline": [
+      "Write components in JSX with <code>$</code> boundaries",
+      "The optimizer splits code at each <code>$</code> into lazy chunks",
+      "The server sends HTML with state and listeners serialised into it",
+      "A tiny loader fetches only the code an interaction needs"
+    ],
+    "what": [
+      "Qwik is built around <i>resumability</i>. Other server-rendering frameworks send HTML and then re-run the application in the browser to attach listeners and rebuild state. Qwik serialises that information into the HTML on the server, so the browser can continue from there without re-running anything.",
+      "Qwik City is its application framework, with file-based routing and server data loaders."
+    ],
+    "how": [
+      "Any function the author marks with a <code>$</code> suffix, such as <code>onClick$</code>, becomes a boundary that the build can move into its own file. The page loads a very small script, the <i>Qwikloader</i>, which listens for events; when one fires it downloads just the code for that handler.",
+      "So the JavaScript that loads with the page is nearly constant however large the app is, and the JavaScript for a feature arrives when the user reaches for it. The cost shows after the first click, which is why this site measures both."
+    ],
+    "good": [
+      "Built so that start-up cost need not grow with the app (not shown by a counter, which is too small)",
+      "Code for a feature loads when used",
+      "Familiar JSX and signals"
+    ],
+    "costs": [
+      "Developers must learn the <code>$</code> rules about what can be serialised",
+      "A small ecosystem and few libraries built for it",
+      "First interactions can wait on a network request for their code"
+    ],
+    "overlap": [
+      [
+        "solid",
+        "JSX with signals."
+      ],
+      [
+        "nextjs",
+        "Both render on the server and send HTML first."
+      ]
+    ],
+    "differs": [
+      [
+        "nextjs",
+        "Next.js hydrates, re-running client components in the browser; Qwik resumes without that step."
+      ],
+      [
+        "angular",
+        "Its author’s earlier project: Angular ships a framework up front, Qwik delays everything it can."
+      ]
+    ],
+    "sources": [
+      [
+        "Qwik documentation",
+        "https://qwik.dev/"
+      ],
+      [
+        "Wikipedia: Qwik",
+        "https://en.wikipedia.org/wiki/Qwik_(framework)"
+      ]
+    ],
+    "group": "framework",
+    "accent": "#6366f1",
+    "pros": "Built so that start-up cost need not grow with the app (not shown by a counter, which is too small). Code for a feature loads when used.",
+    "cons": "Developers must learn the <code>$</code> rules about what can be serialised. A small ecosystem and few libraries built for it.",
+    "pros_from_earlier": false
+  },
+  "nextjs": {
+    "name": "Next.js",
+    "kind": "React meta-framework",
+    "by": "Vercel (formerly ZEIT)",
+    "since": "2016",
+    "lang": "JavaScript or TypeScript, with React",
+    "tagline": "React plus the parts React leaves out: routes, servers, bundling and data.",
+    "claim": "React with the rest included",
+    "touches": "React, Vercel",
+    "builds_on": [
+      "react"
+    ],
+    "rendering": "server, static, client, per route",
+    "updates": "React’s virtual DOM",
+    "authoring": "JSX",
+    "router": "yes, from the file system",
+    "pipeline": [
+      "Folders under <code>app/</code> become routes",
+      "Each route is rendered on the server or at build time",
+      "HTML, then the React client code, reach the browser",
+      "React hydrates the page and takes over interaction"
+    ],
+    "what": [
+      "Next.js is a framework built on React. Its router is the file system: a folder becomes a URL, and special files in it (<code>page</code>, <code>layout</code>) say what to draw. It adds server rendering, static generation, API endpoints, image and font handling, and its own bundler.",
+      "In the App Router, components are Server Components by default. A file marked <code>'use client'</code> becomes a Client Component, which is the kind used for state and interaction."
+    ],
+    "how": [
+      "For each route Next.js decides when its HTML is made: at build time (static), on each request (dynamic), or a mixture with cached results that are refreshed. The server sends HTML first, so the page shows before any JavaScript runs.",
+      "The browser then downloads the React runtime and the Client Components on the page, and React <i>hydrates</i> the HTML: it attaches event handlers to the markup already there instead of drawing it again. Layouts stay mounted while the user moves between routes, and Server Actions let a form call a server function directly."
+    ],
+    "good": [
+      "One tool for pages, routes, rendering modes and deployment",
+      "Search-friendly HTML from the first response",
+      "Big ecosystem, because React’s is its own"
+    ],
+    "costs": [
+      "It inherits React’s runtime and adds its own (see the measured figure)",
+      "Several rendering modes and caching layers must be understood to predict behaviour",
+      "Built around React and, in practice, around one hosting company’s platform"
+    ],
+    "overlap": [
+      [
+        "react",
+        "Every Next.js component is a React component, and React libraries work in it."
+      ],
+      [
+        "nuxt",
+        "Nuxt does for Vue what Next.js does for React: file routing, server rendering, hybrid rendering per route."
+      ],
+      [
+        "astro",
+        "Both can produce static HTML for content pages."
+      ]
+    ],
+    "differs": [
+      [
+        "astro",
+        "Astro ships no JavaScript by default and hydrates only chosen islands, where Next.js hydrates the Client Components on a page."
+      ],
+      [
+        "qwik",
+        "Qwik resumes where the server stopped instead of hydrating, so it needs no start-up re-run."
+      ]
+    ],
+    "sources": [
+      [
+        "Next.js documentation",
+        "https://nextjs.org/docs"
+      ],
+      [
+        "Wikipedia: Next.js",
+        "https://en.wikipedia.org/wiki/Next.js"
+      ]
+    ],
+    "group": "meta",
+    "accent": "#111827",
+    "pros": "One tool for pages, routes, rendering modes and deployment. Search-friendly HTML from the first response.",
+    "cons": "It inherits React’s runtime and adds its own (see the measured figure). Several rendering modes and caching layers must be understood to predict behaviour.",
+    "pros_from_earlier": false
+  },
+  "nuxt": {
+    "name": "Nuxt",
+    "kind": "Vue meta-framework",
+    "by": "Sébastien and Alexandre Chopin",
+    "since": "2016",
+    "lang": "JavaScript or TypeScript, with Vue",
+    "tagline": "Vue with routing, server rendering and a server built in.",
+    "claim": "Vue, built for the full stack",
+    "touches": "Vue, Nitro",
+    "builds_on": [
+      "vue"
+    ],
+    "rendering": "server, static, client, per route",
+    "updates": "Vue’s reactivity",
+    "authoring": "single-file components",
+    "router": "yes, from the file system",
+    "pipeline": [
+      "Files under <code>pages/</code> become routes",
+      "The Nitro server renders HTML for each route",
+      "HTML and the Vue client code reach the browser",
+      "Vue hydrates and takes over"
+    ],
+    "what": [
+      "Nuxt is the framework for building complete applications with Vue. It gives file-based routing, layouts, data-fetching helpers, automatic imports of components and composables, and a server layer.",
+      "Its server engine is Nitro, which can output a Node server, static files or functions for many hosting platforms from the same code."
+    ],
+    "how": [
+      "Each route can be rendered on the server per request, at build time, or on the client only, set per route with <i>route rules</i>. The server sends HTML, and Vue then hydrates it in the browser.",
+      "Because routes and components are found by convention, most of the wiring a Vue app would need (router setup, imports) is generated for you."
+    ],
+    "good": [
+      "A full-stack Vue app with little configuration",
+      "Rendering mode chosen per route",
+      "Deploys to many hosts from one code base"
+    ],
+    "costs": [
+      "Convention and auto-imports hide code paths that a plain Vue app shows",
+      "Adds a server runtime and build step to Vue’s own",
+      "Smaller than Next.js in community and hosting integrations"
+    ],
+    "overlap": [
+      [
+        "nextjs",
+        "The same job for a different view library: routing, rendering modes, server code."
+      ],
+      [
+        "vue",
+        "Components are ordinary Vue components."
+      ]
+    ],
+    "differs": [
+      [
+        "nextjs",
+        "Nuxt’s Vue reactivity rarely needs hand-written memoization, and its auto-imports remove import lines that Next.js code spells out."
+      ],
+      [
+        "astro",
+        "Astro sends no framework runtime unless a page asks for an island."
+      ]
+    ],
+    "sources": [
+      [
+        "Nuxt documentation",
+        "https://nuxt.com/docs"
+      ],
+      [
+        "Wikipedia: Nuxt",
+        "https://en.wikipedia.org/wiki/Nuxt"
+      ]
+    ],
+    "group": "meta",
+    "accent": "#14b8a6",
+    "pros": "A full-stack Vue app with little configuration. Rendering mode chosen per route.",
+    "cons": "Convention and auto-imports hide code paths that a plain Vue app shows. Adds a server runtime and build step to Vue’s own.",
+    "pros_from_earlier": false
+  },
+  "astro": {
+    "name": "Astro",
+    "kind": "content-first framework",
+    "by": "Fred K. Schott and the Astro team",
+    "since": "2021",
+    "lang": "Astro components, with JavaScript or TypeScript",
+    "tagline": "Static HTML by default, with islands of interactivity where you ask for them.",
+    "claim": "No JS until a part needs it",
+    "touches": "Preact, Svelte",
+    "builds_on": [],
+    "rendering": "static by default, or server",
+    "updates": "none on the page; islands use their own framework",
+    "authoring": ".astro components, plus any UI framework",
+    "router": "yes, from the file system",
+    "pipeline": [
+      "Pages are <code>.astro</code> files that render to HTML at build time",
+      "A UI component marked <code>client:*</code> becomes an island",
+      "HTML ships; only the islands’ JavaScript ships",
+      "Each island hydrates on load, when visible or when idle"
+    ],
+    "what": [
+      "Astro is a framework for sites that are mostly content: blogs, docs, marketing and shops. A page is rendered to plain HTML at build time and no JavaScript is sent unless a component needs it.",
+      "It does not have its own component model for interactivity. An interactive piece, called an <i>island</i>, is written in React, Preact, Vue, Svelte, Solid or Lit, and may be mixed on the same page."
+    ],
+    "how": [
+      "A directive such as <code>client:load</code> or <code>client:visible</code> tells Astro when to hydrate an island. The rest of the page stays inert HTML.",
+      "Content collections give Markdown and data files a typed schema, and adapters allow server rendering when a page needs it."
+    ],
+    "good": [
+      "Content pages with no JavaScript cost",
+      "Use the UI library you already know, or several",
+      "Fast static output"
+    ],
+    "costs": [
+      "Not made for highly interactive, app-like pages",
+      "State shared between islands needs extra care",
+      "Mixing libraries means shipping each one’s runtime"
+    ],
+    "overlap": [
+      [
+        "preact",
+        "A common choice for the interactive islands."
+      ],
+      [
+        "nextjs",
+        "Both can emit static HTML for content pages."
+      ]
+    ],
+    "differs": [
+      [
+        "nextjs",
+        "Next.js hydrates its whole React tree for a page; Astro hydrates only the islands."
+      ],
+      [
+        "qwik",
+        "Both avoid shipping everything up front, by opposite means: Astro by not sending, Qwik by deferring."
+      ]
+    ],
+    "sources": [
+      [
+        "Astro documentation",
+        "https://docs.astro.build/"
+      ],
+      [
+        "Wikipedia: Astro",
+        "https://en.wikipedia.org/wiki/Astro_(web_framework)"
+      ]
+    ],
+    "group": "other",
+    "accent": "#d946ef",
+    "pros": "Content pages with no JavaScript cost. Use the UI library you already know, or several.",
+    "cons": "Not made for highly interactive, app-like pages. State shared between islands needs extra care.",
+    "pros_from_earlier": false
+  },
+  "htmx": {
+    "name": "htmx",
+    "kind": "hypermedia library",
+    "by": "Carson Gross",
+    "since": "2020 (1.0)",
+    "lang": "HTML attributes; any server language",
+    "tagline": "Ask the server for HTML and put it where you say, with attributes.",
+    "claim": "The server sends the HTML",
+    "touches": "any server",
+    "builds_on": [],
+    "rendering": "server",
+    "updates": "swap HTML fragments from the server",
+    "authoring": "HTML attributes",
+    "router": "none (the server routes)",
+    "pipeline": [
+      "Add <code>hx-*</code> attributes to HTML",
+      "One small script ships",
+      "An event sends a request to the server",
+      "The server answers with an HTML fragment, which htmx swaps into the page"
+    ],
+    "what": [
+      "htmx extends HTML so that any element can make a request and any response can replace part of the page. <code>hx-post</code> says which request to make, and <code>hx-target</code> and <code>hx-swap</code> say where the answer goes.",
+      "It succeeds intercooler.js, by the same author, and is built on the idea of <i>hypermedia</i>: the server returns HTML, not JSON, and the page changes by exchanging HTML."
+    ],
+    "how": [
+      "The server holds the state and does the rendering, in whatever language it already uses. The browser holds the script and the markup. A click sends a request, the server replies with a fragment of HTML, and htmx swaps it in.",
+      "It needs no build step and no client-side component model, which is also what it gives up: the page cannot respond to a click without a round trip, unless other script is written."
+    ],
+    "good": [
+      "No build, no client state to keep in sync",
+      "Works with any backend language",
+      "Small single script"
+    ],
+    "costs": [
+      "Every interaction that changes state needs a server round trip",
+      "Rich client-only interactions (drag, offline, optimistic UI) need other tools",
+      "State and logic live on the server, so the server must be there"
+    ],
+    "overlap": [
+      [
+        "astro",
+        "Both favour mostly-HTML pages with a little interactivity."
+      ],
+      [
+        "lit",
+        "Both add behaviour to HTML without a virtual DOM."
+      ]
+    ],
+    "differs": [
+      [
+        "react",
+        "React moves the UI into the browser as code; htmx keeps it on the server as HTML."
+      ],
+      [
+        "qwik",
+        "Qwik renders on the server and resumes on the client; htmx stays on the server for every change."
+      ]
+    ],
+    "sources": [
+      [
+        "htmx documentation",
+        "https://htmx.org/docs/"
+      ],
+      [
+        "Wikipedia: htmx",
+        "https://en.wikipedia.org/wiki/Htmx"
+      ]
+    ],
+    "group": "other",
+    "accent": "#ec4899",
+    "pros": "No build, no client state to keep in sync. Works with any backend language.",
+    "cons": "Every interaction that changes state needs a server round trip. Rich client-only interactions (drag, offline, optimistic UI) need other tools.",
+    "pros_from_earlier": false
+  }
+}

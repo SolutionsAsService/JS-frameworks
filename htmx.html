@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>htmx · JS Frameworks</title>
+<meta name="description" content="htmx: Ask the server for HTML and put it where you say, with attributes. The JavaScript for a counter app in it, measured: 16.9 kB gzipped.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="htmx · JS Frameworks">
+<meta property="og:description" content="htmx: Ask the server for HTML and put it where you say, with attributes. The JavaScript for a counter app in it, measured: 16.9 kB gzipped.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body class="p-htmx">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<a class="brand" href="index.html" aria-label="JS Frameworks, home"><span class="mark" aria-hidden="true">JS</span><span>JS Frameworks</span></a>
+<nav class="nav" aria-label="Site"><ul><li class="hide-sm"><a href="index.html"><span class="long">Home</span><span class="short" aria-hidden="true">Home</span></a></li><li class="hide-sm"><a href="how.html"><span class="long">How they work</span><span class="short" aria-hidden="true">How</span></a></li><li><a href="compare.html"><span class="long">Compare</span><span class="short" aria-hidden="true">Compare</span></a></li><li class="hide-sm"><a href="profile.html"><span class="long">Author’s repos</span><span class="short" aria-hidden="true">Repos</span></a></li><li class="hide-sm"><a href="also.html"><span class="long">Also</span><span class="short" aria-hidden="true">Also</span></a></li><li><a href="about.html"><span class="long">About</span><span class="short" aria-hidden="true">About</span></a></li></ul></nav>
+<button type="button" class="mode" id="theme-toggle" aria-label="Switch to dark mode"><span class="ico" aria-hidden="true"><svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg><svg class="ico-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg></span><span class="lbl">Dark</span></button>
+</header>
+<nav class="pills" aria-label="Frameworks"><ul><li><a href="react.html" style="--a:#06b6d4">React</a></li><li><a href="preact.html" style="--a:#7c3aed">Preact</a></li><li><a href="solid.html" style="--a:#3b82f6">Solid</a></li><li><a href="lit.html" style="--a:#f59e0b">Lit</a></li><li><a href="vue.html" style="--a:#22c55e">Vue</a></li><li><a href="angular.html" style="--a:#ef4444">Angular</a></li><li><a href="svelte.html" style="--a:#f97316">Svelte</a></li><li><a href="qwik.html" style="--a:#6366f1">Qwik</a></li><li><a href="nextjs.html" style="--a:#111827">Next.js</a></li><li><a href="nuxt.html" style="--a:#14b8a6">Nuxt</a></li><li><a href="astro.html" style="--a:#d946ef">Astro</a></li><li><a href="htmx.html" style="--a:#ec4899" aria-current=page>htmx</a></li></ul></nav>
+<main id="main">
+<header class="band" data-fw="htmx" style="--a:#ec4899;--on:#0f172a;--fam:'JetBrains Mono';--fw:800;--fs:normal;--tt:lowercase;--ls:-.03em"><div class="band-in"><div><p class="kicker">hypermedia library</p><h1 id="top">htmx</h1>
+<p class="band-line">Ask the server for HTML and put it where you say, with attributes.</p><ul class="facts"><li><b>Kind</b>hypermedia library</li><li><b>Made by</b>Carson Gross</li><li><b>Since</b>2020 (1.0)</li><li><b>Written in</b>HTML attributes; any server language</li><li><b>Checked on npm</b>1.0.0 on 2020-11-24</li></ul></div><div class="art"><svg class="scene scene-big" viewBox="0 0 160 84" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"><rect class="s" x="8" y="10" width="52" height="64" rx="6"/><rect class="t" x="100" y="10" width="52" height="64" rx="6"/><rect class="d" x="14" y="18" width="40" height="6" rx="2"/><rect class="d" x="14" y="30" width="40" height="6" rx="2"/><rect class="f" x="14" y="46" width="40" height="14" rx="3"/><line class="s" x1="62" y1="28" x2="98" y2="28"/><polyline class="s" points="92.7,30.9 98,28 92.7,25.1"/><line class="s" x1="98" y1="56" x2="62" y2="56"/><polyline class="s" points="67.3,53.1 62,56 67.3,58.9"/><rect class="d" x="112" y="22" width="28" height="6" rx="2"/><rect class="f" x="112" y="50" width="28" height="14" rx="3"/></svg></div></div></header>
+<div class="wrap" data-fw="htmx" style="--a:#ec4899;--on:#0f172a">
+<section class="section" aria-labelledby="pc-h"><h2 id="pc-h">At a glance</h2>
+<div class="pc"><div class="pro"><h3>Pros</h3><p>No build, no client state to keep in sync. Works with any backend language.</p></div><div class="con"><h3>Cons</h3><p>Every interaction that changes state needs a server round trip. Rich client-only interactions (drag, offline, optimistic UI) need other tools.</p></div></div></section>
+<section class="section" aria-labelledby="what-h"><h2 id="what-h">What it is</h2><div class="prose"><p>htmx extends HTML so that any element can make a request and any response can replace part of the page. <code>hx-post</code> says which request to make, and <code>hx-target</code> and <code>hx-swap</code> say where the answer goes.</p><p>It succeeds intercooler.js, by the same author, and is built on the idea of <i>hypermedia</i>: the server returns HTML, not JSON, and the page changes by exchanging HTML.</p></div></section>
+<section class="section" aria-labelledby="how-h"><h2 id="how-h">How it works</h2>
+<ol class="flow" aria-label="From source to screen"><li>Add <code>hx-*</code> attributes to HTML</li><li>One small script ships</li><li>An event sends a request to the server</li><li>The server answers with an HTML fragment, which htmx swaps into the page</li></ol>
+<div class="prose"><p>The server holds the state and does the rendering, in whatever language it already uses. The browser holds the script and the markup. A click sends a request, the server replies with a fragment of HTML, and htmx swaps it in.</p><p>It needs no build step and no client-side component model, which is also what it gives up: the page cannot respond to a click without a round trip, unless other script is written.</p></div></section>
+<section class="section" aria-labelledby="ctr-h"><h2 id="ctr-h">The same counter, measured</h2>
+<p class="prose">One heading and one button that counts clicks, built for production the way htmx recommends. This is the whole source that was measured:</p>
+<figure><figcaption>htmx/server.mjs · <a href="https://github.com/SolutionsAsService/JS-frameworks/blob/main/tools/apps/htmx/server.mjs">in the repository</a></figcaption><pre tabindex="0" aria-label="htmx/server.mjs"><code>import http from &#x27;node:http&#x27;
+import fs from &#x27;node:fs&#x27;
+const btn = n =&gt; `&lt;button hx-post=&quot;/inc&quot; hx-vals=&#x27;{&quot;n&quot;:${n + 1}}&#x27; hx-swap=&quot;outerHTML&quot;&gt;count: ${n}&lt;/button&gt;`
+const page = `&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;counter&lt;/title&gt;
+&lt;script src=&quot;/htmx.min.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Counter&lt;/h1&gt;&lt;div id=&quot;app&quot;&gt;${btn(0)}&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;`
+http.createServer((req, res) =&gt; {
+  if (req.url === &#x27;/htmx.min.js&#x27;) {
+    res.writeHead(200, { &#x27;content-type&#x27;: &#x27;text/javascript&#x27; })
+    return res.end(fs.readFileSync(new URL(&#x27;./node_modules/htmx.org/dist/htmx.min.js&#x27;, import.meta.url)))
+  }
+  if (req.method === &#x27;POST&#x27; &amp;&amp; req.url === &#x27;/inc&#x27;) {
+    let b = &#x27;&#x27;; req.on(&#x27;data&#x27;, d =&gt; (b += d)); req.on(&#x27;end&#x27;, () =&gt; {
+      const n = Number(new URLSearchParams(b).get(&#x27;n&#x27;)) || 0
+      res.writeHead(200, { &#x27;content-type&#x27;: &#x27;text/html&#x27; }); res.end(btn(n))
+    }); return
+  }
+  res.writeHead(200, { &#x27;content-type&#x27;: &#x27;text/html&#x27; }); res.end(page)
+}).listen(Number(process.env.PORT) || 3100)</code></pre></figure>
+<div class="meas"><div><b>16.9 kB</b><span>gzipped JS to show the page, in 1 file</span></div><div><b>0.0 kB</b><span>more JS fetched by one click</span></div><div><b>yes</b><span>the HTML already says “count: 0” before any JS runs</span></div><div><b>2.0.11</b><span>version measured</span></div></div><p class="prose">htmx’s figure is its one script. Each click then needs a request to a server, which this counter does and a client-only framework does not.</p>
+<p class="prose"><a href="about.html#proc-h">How the number was measured</a>, and <a href="compare.html">the other eleven beside it</a>.</p></section>
+<section class="section" aria-labelledby="rel-h"><h2 id="rel-h">Overlaps and differences</h2>
+<div class="two"><div><h3>Overlaps with</h3><ul><li><a href="astro.html">Astro</a>: Both favour mostly-HTML pages with a little interactivity.</li><li><a href="lit.html">Lit</a>: Both add behaviour to HTML without a virtual DOM.</li></ul></div><div><h3>Differs from</h3><ul><li><a href="react.html">React</a>: React moves the UI into the browser as code; htmx keeps it on the server as HTML.</li><li><a href="qwik.html">Qwik</a>: Qwik renders on the server and resumes on the client; htmx stays on the server for every change.</li></ul></div></div></section>
+<section class="section" aria-labelledby="tr-h"><h2 id="tr-h">What it is good at, and what it costs</h2>
+<div class="two"><div><h3>Good at</h3><ul><li>No build, no client state to keep in sync</li><li>Works with any backend language</li><li>Small single script</li></ul></div><div><h3>Costs</h3><ul><li>Every interaction that changes state needs a server round trip</li><li>Rich client-only interactions (drag, offline, optimistic UI) need other tools</li><li>State and logic live on the server, so the server must be there</li></ul></div></div></section>
+
+<section class="section" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="sources"><li><a href="https://htmx.org/docs/">htmx documentation</a></li><li><a href="https://en.wikipedia.org/wiki/Htmx">Wikipedia: htmx</a></li></ul></section>
+</div>
+<nav class="pager" aria-label="Previous and next"><a href="astro.html"><span>Previous</span>Astro</a><a href="how.html"><span>Next</span>How they work</a></nav>
+</main>
+<footer class="foot">
+<ul><li><a href="index.html">Home</a></li><li><a href="how.html">How they work</a></li><li><a href="compare.html">Compare</a></li><li><a href="profile.html">Author’s repos</a></li><li><a href="also.html">Also</a></li><li><a href="about.html">About</a></li></ul>
+<p>Every size on this site is the gzipped JavaScript files a real counter app sent to the browser (inline script is not counted), measured on 2026-11-08 with the script in <a href="https://github.com/SolutionsAsService/JS-frameworks/tree/main/tools">tools/</a>. How that was done, and what it leaves out, is on <a href="about.html">About</a>.</p>
+<p>By SolutionsAsService. This site sets no cookies and collects nothing; the only thing it stores is your light or dark choice, in your browser.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><title>counter</title></head>
+  <body>
+    <h1>Counter</h1>
+    <button id="b">count: 0</button>
+    <script>
+      let n = 0
+      const b = document.getElementById('b')
+      b.addEventListener('click', () => { n++; b.textContent = `count: ${n}` })
+    </script>
+  </body>
+</html>

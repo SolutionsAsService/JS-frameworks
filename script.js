@@ -1,27 +1,17 @@
-// Wait for the DOM to load
-document.addEventListener('DOMContentLoaded', () => {
-  const rootElement = document.documentElement;
-  const themeToggleButton = document.getElementById('theme-toggle');
-
-  // Set the theme and update the toggle button text
-  function setTheme(theme) {
-    rootElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeToggleButton.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+/* The light and dark toggle from the first version of this site. The page already has its theme before it paints
+   (a tiny inline script in the head); this wires the button and remembers the choice in this browser only. */
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.querySelector('.lbl').textContent = theme === 'dark' ? 'Light' : 'Dark';
   }
-
-  // Get the stored theme or default to light
-  const storedTheme = localStorage.getItem('theme') || 'light';
-  setTheme(storedTheme);
-
-  // Toggle theme on button click
-  if (themeToggleButton) {
-    themeToggleButton.addEventListener('click', () => {
-      const currentTheme = rootElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
-    });
-  }
-
-  // Additional dynamic behaviors can be added here.
-});
+  apply(root.getAttribute('data-theme') || 'light');
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked: the choice lasts for this page */ }
+    apply(next);
+  });
+})();
